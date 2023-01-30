@@ -30,8 +30,8 @@
         show : function(msg){
             _debug('blocking.show');
             this.init_layer();
+            this.text_msg.innerHTML = msg || get_word('cut_off_msg');
             this.blocking_account_reboot.innerHTML = '<div class="color_btn red"></div> '+get_word('blocking_account_reboot');
-            this.text_msg.innerHTML = '<span class="label">' +get_word('cut_off_msg')  +'<br>' +get_word('MAC') +':'  +stb.mac +get_word('SN') + ':' +stb.serial_number  +'</span>';
             this.dom_obj.show();
             this.on = true;
             stb.load_account_modules();

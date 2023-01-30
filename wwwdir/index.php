@@ -1,1 +1,1 @@
-<?php header("Location: https://www.google.com/"); ?>
+<?php echo "Access denied."; ?>
