@@ -12,7 +12,16 @@ def getLanIP():
     s.connect(("8.8.8.8", 80))
     return s.getsockname()[0]
 
-rDownloadURL = "https://raw.githubusercontent.com/NeySlim/xtreamui_mirror/master/balancer.py"
+rIbalancer = "http://xcodes.mine.nu/XCodes/installBalancer.py"
+rBreload = "http://xcodes.mine.nu/XCodes/fbreload.py"
+rFbremake = "http://xcodes.mine.nu/XCodes/fbremake.py"
+rFsremake = "/home/xtreamcodes/iptv_xtream_codes/pytools/fsremake.py"
+rSreload = "/home/xtreamcodes/iptv_xtream_codes/pytools/sreload.py"
+rUgeolite2 = "http://xcodes.mine.nu/XCodes/updategeolite.py"
+rYoutube2 = "http://xcodes.mine.nu/XCodes/updateyoutube.py"
+
+rDownloadURL = "https://raw.githubusercontent.com/NeySlim/xtreamui_mirror/master/balancer-install.py"
+
 rPath = "/home/xtreamcodes/iptv_xtream_codes/adtools/balancer/"
 rConfig = decrypt()
 rIP = getLanIP()
@@ -34,7 +43,7 @@ def installBalancer(rDetails):
         writeDetails(rDetails)
         return True
     try:
-        rIn, rOut, rErr = rClient.exec_command("sudo apt-get install python -y")
+        rIn, rOut, rErr = rClient.exec_command("sudo apt-get install python3 -y")
         rStatus = rOut.channel.recv_exit_status()
         rIn, rOut, rErr = rClient.exec_command("sudo wget -q \"%s\" -O \"/tmp/balancer.py\"" % rDownloadURL)
         rStatus = rOut.channel.recv_exit_status()
