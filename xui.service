@@ -1,0 +1,15 @@
+[Unit]
+Description=Xtream UI
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=forking
+ExecStart=/home/xtreamcodes/iptv_xtream_codes/systemd_start.sh
+ExecStop=/home/xtreamcodes/iptv_xtream_codes/systemd_stop.sh
+TimeoutSec=0
+RemainAfterExit=yes
+GuessMainPID=no
+
+[Install]
+WantedBy=multi-user.target
